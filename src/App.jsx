@@ -16,7 +16,7 @@ import Join from './pages/Join';
 import Sponsors from './pages/Sponsors';
 import Footer from './pages/Footer';
 import GoBackPage from './pages/GoBackPage';
-
+import { Toaster } from "react-hot-toast";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const whatsNewRef = useRef(null);
@@ -55,6 +55,7 @@ function App() {
           <Route path='/go-back' element={<GoBackPage/>}/>
         </Routes>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </Router>
   )
 }

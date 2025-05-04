@@ -4,6 +4,7 @@ import { MdDelete } from 'react-icons/md';
 import { chatSession } from '../service/AiModal';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import toast, { Toaster } from "react-hot-toast";
 
 const images = [
   '/ss10.jpg',
@@ -70,6 +71,7 @@ const NotesUploader = () => {
       setSummary(aiSummary || 'No summary generated.');
     } catch (err) {
       console.error('OCR or Summary Error:', err);
+      toast.error(`Error: ${err.message || 'Something went wrong while processing the image.'}`);
     } finally {
       setIsProcessing(false);
     }
@@ -82,6 +84,7 @@ const NotesUploader = () => {
   };
 
   const generateSummary = async (text) => {
+    
     const prompt = `Generate a short summary for the following text:\n\n"${text}"`;
     try {
       const result = await chatSession.sendMessage(prompt);
@@ -92,12 +95,14 @@ const NotesUploader = () => {
       }
       return response?.trim();
     } catch (err) {
+      toast.error("Something went wrong")
       console.error('Error generating summary:', err);
       return null;
     }
   };
 
   const generateQuiz = async () => {
+    toast.success("Generating Quiz")
     if (!extractedText) return;
     const prompt = `Generate 10 multiple choice quiz questions from the following text. Each question should have 4 options and indicate the correct answer:\n\n"${extractedText}"`;
     try {
@@ -110,6 +115,7 @@ const NotesUploader = () => {
   };
 
   const generateFlashcards = async () => {
+    toast.success("Generating FlashCards")
     if (!extractedText) return;
     const prompt = `Generate flashcards from the following text. Each flashcard should have a question and an answer:\n\n"${extractedText}"`;
     try {
