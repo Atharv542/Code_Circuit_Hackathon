@@ -33,7 +33,7 @@ const FlashCardPage = () => {
   const speak = (text) => {
     if (!window.speechSynthesis) return;
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 1;
+    utterance.rate = 1.25;
     utterance.onend = () => setIsSpeaking(false);
     utteranceRef.current = utterance;
     window.speechSynthesis.speak(utterance);
