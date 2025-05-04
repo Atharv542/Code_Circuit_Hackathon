@@ -26,7 +26,6 @@ function Home() {
     <div className="py-4 flex items-center px-4 md:px-10">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
         
-        {/* Left Side - Image */}
         <div className="w-full md:w-1/2">
           <img
             src="SS1.png"
@@ -35,7 +34,7 @@ function Home() {
           />
         </div>
 
-        {/* Right Side - Text & Buttons */}
+      
         <div className="w-full md:w-1/2 text-center mt-10 md:text-left">
           <h1 className="text-3xl font-bold text-[#212422] mb-4">
             For every student,<br />

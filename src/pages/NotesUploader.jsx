@@ -129,7 +129,7 @@ const NotesUploader = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 ">
-      {/* Hero Section */}
+     
       <section className="flex flex-col md:flex-row mt-52 justify-between max-w-7xl mx-auto">
         <div className="md:w-1/2 space-y-6">
           <h1 className="text-4xl font-bold italic text-gray-800">"Smarter Studying Starts Here – Just Upload & Learn."</h1>
@@ -163,7 +163,7 @@ Everything you need to study smarter all in one place.<br/><br/>
         </div>
       </section>
 
-      {/* Dropbox Section */}
+    
       <motion.section
         ref={dropboxRef}
         initial={{ opacity: 0, y: 40 }}
@@ -191,7 +191,7 @@ Everything you need to study smarter all in one place.<br/><br/>
         <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept=".png,.jpg,.jpeg,.pdf,.docx" />
       </motion.section>
 
-      {/* Summary & Buttons */}
+  
       {summary && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -208,7 +208,7 @@ Everything you need to study smarter all in one place.<br/><br/>
         </motion.div>
       )}
 
-      {/* Guide Section */}
+     
       <motion.section
   ref={guideRef}
   initial={{ opacity: 0, y: 30 }}

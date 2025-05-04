@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#14213d] text-white px-6 md:px-20 py-10 text-sm">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-4 gap-5">
-        {/* Mission Section */}
+    
         <div className="w-full md:w-96">
           <p className="text-lg font-medium text-gray-300 mb-2">
             Our mission is to provide a free, world-class education to anyone, anywhere.
@@ -16,7 +16,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* About Section */}
+      
         <div className="min-w-[220px] ml-20 ">
           <h4 className="font-bold mb-2 hover:underline cursor-pointer">About</h4>
           <ul className="space-y-1 text-gray-300 whitespace-nowrap ">
@@ -35,7 +35,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact & Apps Section */}
+    
         <div className="">
           <h4 className="font-bold mb-2 hover:underline cursor-pointer">Contact</h4>
           <ul className="space-y-1 text-gray-300">
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Courses Section */}
+
         <div className="min-w-[220px]">
           <h4 className="font-bold mb-2 hover:underline cursor-pointer">Courses</h4>
           <ul className="space-y-1 text-gray-300 whitespace-nowrap">
@@ -70,10 +70,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+  
       <div className="pt-6 -mt-10 ">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-          {/* Language & Country Selector */}
+    
           <div className="flex flex-col   items-center gap-6 text-gray-400 ">
             <div className="flex items-center gap-2 -ml-96 text-[12px]">
               <span  >Language:</span>
@@ -100,10 +100,10 @@ const Footer = () => {
           </div>
           </div>
 
-          {/* Legal Text */}
+      
        
 
-          {/* Social Icons */}
+  
           <div className="flex gap-4 text-gray-400 text-xl flex-1  mt-20 ml-68 justify-center">
             <FaFacebookF className="hover:text-blue-500 cursor-pointer" />
             <FaTwitter className="hover:text-blue-500 cursor-pointer" />

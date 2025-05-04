@@ -25,13 +25,13 @@ function Navbar({ scrollToWhatsNew }) {
     
       </div>
 
-      {/* Center: Site Name */}
+    
       <div onClick={handleClick} className="text-2xl font-bold text-[#12316B]  hover:text-blue-600 cursor-pointer flex items-center tracking-wide">
         <img src='LogoH.jpg' className='w-9 h-9'/>
         Khan Academy
       </div>
 
-      {/* Right: Login, Sign Up, Donate */}
+   
       <div className="flex items-center gap-8">
       <button onClick={scrollToWhatsNew} className=" text-md  cursor-pointer font-semibold text-blue-600">
           <span className='hover:underline'>Memmory Boost</span> <span className='text-xl'>✨</span>

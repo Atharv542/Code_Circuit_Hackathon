@@ -12,7 +12,7 @@ function Child() {
   return (
     <section className="flex flex-col md:flex-row min-h-screen px-8 md:px-36 py-10 gap-20 items-center bg-white">
       
-      {/* Left: Image with Slide from Left Animation */}
+    
       <motion.div
         className="md:w-1/2 w-full py-10 mt-5"
         initial={{ x: -100, opacity: 0 }}
@@ -27,7 +27,7 @@ function Child() {
         />
       </motion.div>
 
-      {/* Right: Text & Button with Slide from Right Animation */}
+  
       <motion.div
         className="md:w-1/2 w-full mt-10 md:mt-0 text-center md:text-left"
         initial={{ x: 100, opacity: 0 }}

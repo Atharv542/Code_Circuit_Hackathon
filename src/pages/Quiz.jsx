@@ -85,7 +85,7 @@ const QuizPage = () => {
       <audio ref={wrongSound} src="fail.mp3" preload="auto" />
 
       <div className="bg-white shadow-xl rounded-xl p-6 max-w-2xl w-full animate-fadeIn">
-        {/* Progress Bar */}
+       
         <div className="w-full bg-gray-300 rounded-full h-3 mb-4">
           <div
             className="bg-blue-600 h-3 rounded-full transition-all duration-500"
@@ -96,14 +96,14 @@ const QuizPage = () => {
         <h2 className="text-xl font-bold mb-2">Question {currentQuestionIndex + 1} of {quizData.length}</h2>
         <div className="mb-4 text-gray-700">{currentQuestion.question}</div>
 
-        {/* Timer */}
+      
         <div className="mb-4 text-sm">
           <span className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
             ⏱️ Time Left: {timeLeft}s
           </span>
         </div>
 
-        {/* Options */}
+     
         <div className="space-y-3 mb-6">
           {currentQuestion.options.map((opt, idx) => (
             <label key={idx} className="flex items-center gap-2 cursor-pointer">
@@ -120,7 +120,6 @@ const QuizPage = () => {
           ))}
         </div>
 
-        {/* Submit + Feedback */}
         <div className="flex items-center gap-4 mb-4">
           <button
             onClick={handleSubmit}
@@ -142,12 +141,12 @@ const QuizPage = () => {
           )}
         </div>
 
-        {/* Motivation or Fun Fact */}
+      
         <div className="text-center italic text-sm text-gray-500">
           "Every expert was once a beginner. Keep going! 💪"
         </div>
 
-        {/* Score Preview */}
+       
         <div className="mt-4 text-center text-sm">
           <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full mr-2">
             Score: {score}/{quizData.length}

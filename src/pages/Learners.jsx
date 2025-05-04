@@ -12,7 +12,7 @@ function Learners() {
   return (
     <section className="flex flex-col  md:flex-row items-center justify-between px-8 md:px-28 gap-8 bg-white ">
       
-      {/* Left: Text & Button with Zoom In Effect */}
+
       <motion.div
         className="md:w-1/2 w-full space-y-6"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -32,7 +32,6 @@ function Learners() {
        
       </motion.div>
 
-      {/* Right: Image with Slide Up Effect */}
       <motion.div
         className="md:w-1/2 w-full"
         initial={{ y: 100, opacity: 0 }}

@@ -12,7 +12,7 @@ const TeacherSection = () => {
   return (
     <section className="flex flex-col md:flex-row  px-10 md:px-36 py-10 gap-20">
       
-      {/* Left: Image */}
+  
       <motion.div
         className="md:w-1/2 py-10 w-full"
         initial={{ x: -100, opacity: 0 }}
@@ -27,7 +27,7 @@ const TeacherSection = () => {
         />
       </motion.div>
 
-      {/* Right: Text */}
+   
       <motion.div
         className="md:w-1/2 w-full text-left space-y-4"
         initial={{ x: 100, opacity: 0 }}

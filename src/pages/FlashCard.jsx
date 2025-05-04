@@ -77,7 +77,6 @@ const FlashCardPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#f9fafb] p-6 relative">
       <h1 className="text-4xl font-bold mb-4 text-blue-800">Flash Cards</h1>
 
-      {/* Progress bar with percentage */}
       <div className="w-full max-w-md">
         <div className="bg-gray-300 rounded-full h-2 mb-1">
           <div
@@ -115,10 +114,10 @@ const FlashCardPage = () => {
               )}
             </div>
 
-            {/* Speaker Icon */}
+          
             <button
               onClick={(e) => {
-                e.stopPropagation(); // Prevent card flip
+                e.stopPropagation(); 
                 toggleSpeak();
               }}
               className="absolute top-3 right-4 cursor-pointer text-xl text-gray-600 hover:text-blue-600"
@@ -146,12 +145,12 @@ const FlashCardPage = () => {
         </button>
       </div>
 
-      {/* Card info */}
+    
       <p className="text-sm text-gray-700 mt-3">
         Card {currentIndex + 1} of {flashcards.length} — <span className="italic text-gray-500">Click to {flipped ? 'see question' : 'reveal answer'}</span>
       </p>
 
-      {/* Tip / Motivation */}
+
       <div className="mt-6 text-center text-gray-600 italic text-sm">
         {tips[currentIndex % tips.length]}
       </div>
