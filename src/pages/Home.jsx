@@ -30,7 +30,7 @@ const HomePage = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/options")}
-            className="px-4 py-2 text-black bg-pink-600 text-lg rounded-lg transition mb-8"
+            className="px-4 py-2 text-white bg-pink-600 text-lg rounded-lg transition mb-8"
           >
             Generate Cheat Sheet
           </motion.button>
