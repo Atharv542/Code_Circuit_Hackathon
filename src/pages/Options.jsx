@@ -202,102 +202,106 @@ The cheat sheet should be according to "${level}" level  (e.g., beginner, interm
 
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen  flex flex-col">
-        <audio ref={sound} src="sound.wav" preload="auto" />
-        <audio ref={sound2} src="sound2.wav" preload="auto" />
-      <div className="px-6 sm:px-10 md:px-20 py-6 flex-grow overflow-auto">
-        <h2 className="text-3xl text-center font-bold px-36">
-           Generate Your Personalized Travel Language Cheat Sheet 🌍
+<div className="bg-gray-900 text-white min-h-screen flex flex-col">
+  <audio ref={sound} src="sound.wav" preload="auto" />
+  <audio ref={sound2} src="sound2.wav" preload="auto" />
+
+  <div className="px-4 sm:px-6 md:px-20 py-6 flex-grow overflow-auto">
+    <h2 className="text-2xl sm:text-3xl text-center font-bold lg:px-36">
+      Generate Your Personalized Travel Language Cheat Sheet 🌍
+    </h2>
+    <p className="mt-3 text-gray-400 text-sm sm:text-base text-center lg:px-36">
+      Choose your travel type and language — LingoTrip will give you a ready-to-use phrase sheet powered by Google Gemini.
+    </p>
+
+    <div className="mt-6 flex flex-col gap-6">
+      {/* Travel Type */}
+      <div className="px-4 lg:px-36">
+        <h2 className="font-medium text-lg sm:text-xl italic my-2 text-center lg:text-left lg:px-24">
+          What is your travel type?
         </h2>
-        <p className="mt-3 text-gray-400   text-sm sm:text-base px-62">
-          Choose your travel type and language — LingoTrip will give you a ready-to-use phrase sheet powered by Google Gemini.
-        </p>
-
-        <div className="mt-6 flex flex-col gap-6">
-          {/* Travel Type */}
-          <div className=" px-36">
-            <h2 className="font-medium text-lg sm:text-xl italic my-2 px-24">What is your travel type?</h2>
-            <div className="grid grid-cols-2 w-6xl sm:grid-cols-3 px-24 gap-4">
-              {SelectTravelTypeOptions.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => handleSelect("travelType", item.title)}
-                  className={`p-4  cursor-pointer rounded-lg text-center transition-all duration-200 ${
-                    formData.travelType === item.title
-                      ? "border-[3px] border-pink-600 shadow-md"
-                      : "border-[3px] border-gray-300 hover:shadow-md"
-                  }`}
-                >
-                  <h2 className="text-2xl">{item.icon}</h2>
-                  <h2 className="font-bold text-base sm:text-lg">{item.title}</h2>
-                  <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
-                </div>
-              ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:px-24">
+          {SelectTravelTypeOptions.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleSelect("travelType", item.title)}
+              className={`p-4 cursor-pointer rounded-lg text-center transition-all duration-200 ${
+                formData.travelType === item.title
+                  ? "border-[3px] border-pink-600 shadow-md"
+                  : "border-[3px] border-gray-300 hover:shadow-md"
+              }`}
+            >
+              <h2 className="text-2xl">{item.icon}</h2>
+              <h2 className="font-bold text-base sm:text-lg">{item.title}</h2>
+              <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
             </div>
-          </div>
-
-          {/* Language */}
-          <div className="px-36">
-            <h2 className="font-medium text-lg sm:text-xl px-24 italic my-2">
-              Which language do you want to speak?
-            </h2>
-            <div className="grid grid-cols-2 w-6xl px-24 sm:grid-cols-3 gap-4">
-              {languages.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => handleSelect("language", item.title)}
-                  className={`p-4  cursor-pointer rounded-lg text-center transition-all duration-200 ${
-                    formData.language === item.title
-                      ? "border-[3px] border-pink-600 shadow-md"
-                      : "border-[3px] border-gray-300 hover:shadow-md"
-                  }`}
-                >
-                  <h2 className="text-3xl">{item.icon}</h2>
-                  <h2 className="font-bold text-base sm:text-lg">{item.title}</h2>
-                  <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Formality */}
-          {<div className="px-36">
-            <h2 className="font-medium px-24 italic text-lg sm:text-xl my-2">
-              What is your proficiency level?
-            </h2>
-            <div className="grid grid-cols-2 px-24 w-6xl sm:grid-cols-3 gap-4">
-              {proficiencyLevels.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => handleSelect("level", item.value)}
-                  className={`p-4  cursor-pointer rounded-lg text-center transition-all duration-200 ${
-                    formData.level === item.value
-                      ? "border-[3px] border-pink-600 shadow-md"
-                      : "border-[3px] border-gray-300 hover:shadow-md"
-                  }`}
-                >
-                  <h2 className="text-2xl">{item.icon}</h2>
-                  <h2 className="font-bold text-base sm:text-lg">{item.title}</h2>
-                  <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>}
-
-          {/* Button */}
-          <div className="flex flex-row-reverse mx-40 mt-4 mb-2">
-       <button
-  onClick={generateCheatSheet}
-  className=" text-white px-6 py-2 border-2 border-pink-600 rounded-lg font-semibold shadow-md  hover:bg-pink-600 hover:text-black transition-all"
->
-  Generate Cheat Sheet
-        
-</button>
-          </div>
+          ))}
         </div>
       </div>
-      {loading && <AirplaneLoader progress={progress} />}
+
+      {/* Language */}
+      <div className="px-4 lg:px-36">
+        <h2 className="font-medium text-lg sm:text-xl italic my-2 text-center lg:text-left lg:px-24">
+          Which language do you want to speak?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:px-24">
+          {languages.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleSelect("language", item.title)}
+              className={`p-4 cursor-pointer rounded-lg text-center transition-all duration-200 ${
+                formData.language === item.title
+                  ? "border-[3px] border-pink-600 shadow-md"
+                  : "border-[3px] border-gray-300 hover:shadow-md"
+              }`}
+            >
+              <h2 className="text-3xl">{item.icon}</h2>
+              <h2 className="font-bold text-base sm:text-lg">{item.title}</h2>
+              <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Proficiency */}
+      <div className="px-4 lg:px-36">
+        <h2 className="font-medium text-lg sm:text-xl italic my-2 text-center lg:text-left lg:px-24">
+          What is your proficiency level?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:px-24">
+          {proficiencyLevels.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleSelect("level", item.value)}
+              className={`p-4 cursor-pointer rounded-lg text-center transition-all duration-200 ${
+                formData.level === item.value
+                  ? "border-[3px] border-pink-600 shadow-md"
+                  : "border-[3px] border-gray-300 hover:shadow-md"
+              }`}
+            >
+              <h2 className="text-2xl">{item.icon}</h2>
+              <h2 className="font-bold text-base sm:text-lg">{item.title}</h2>
+              <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Button */}
+      <div className="flex justify-center lg:justify-end lg:mx-40 mt-4 mb-2">
+        <button
+          onClick={generateCheatSheet}
+          className="text-white px-6 py-2 border-2 border-pink-600 rounded-lg font-semibold shadow-md hover:bg-pink-600 hover:text-black transition-all"
+        >
+          Generate Cheat Sheet
+        </button>
+      </div>
     </div>
+  </div>
+
+  {loading && <AirplaneLoader progress={progress} />}
+</div>
+
   );
 };
 

@@ -51,39 +51,53 @@ const Cheatsheet = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-900 min-h-screen relative">
-      {/* Top-right Download Button */}
-      <div className="absolute right-6 mr-20 top-6">
-        <button onClick={downloadPDF} className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">
-          Download as PDF
-        </button>
+     <div className="p-4 sm:p-6 bg-gray-900 min-h-screen">
+      {/* Top - Heading + Download Button */}
+      <div className="flex flex-col md:justify-center md:gap-20 sm:flex-row sm:justify-between  sm:items-center mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-white text-center sm:text-left mb-4 sm:mb-0">
+          Cheat Sheet
+        </h1>
+        <div className="flex justify-center sm:justify-end">
+          <button
+            onClick={downloadPDF}
+            className="bg-pink-600 text-white px-4 py-2 text-sm sm:text-base rounded hover:bg-pink-700"
+          >
+            Download as PDF
+          </button>
+        </div>
       </div>
 
-      {/* Sheet Content */}
-      <div id="cheat-sheet-content">
-        <h1 className="text-3xl font-bold text-center text-white mb-4">Cheat Sheet</h1>
-        <p className="text-center text-lg mb-6 text-white">
-          Language: <b className="text-pink-600">{cheatSheet.language}</b> | Travel Type:{" "}
-          <b className="text-pink-600">{cheatSheet.travel_type}</b> | Proficiency Level:{" "}
-          <b className="text-pink-600">{cheatSheet.level}</b>
-        </p>
+      {/* Sheet Info */}
+      <p className="text-center text-base sm:text-lg mb-6 text-white px-2">
+        Language: <b className="text-pink-600">{cheatSheet.language}</b> | Travel Type:{" "}
+        <b className="text-pink-600">{cheatSheet.travel_type}</b> | Proficiency Level:{" "}
+        <b className="text-pink-600">{cheatSheet.level}</b>
+      </p>
 
+      {/* Cheat Sheet Content */}
+      <div id="cheat-sheet-content">
         {Object.entries(phrases).map(([sectionTitle, items]) => (
-          <div key={sectionTitle} className="mb-8">
-            <h2 className="text-2xl text-pink-600 font-semibold mb-3">{sectionTitle}</h2>
+          <div key={sectionTitle} className="mb-8 px-1 sm:px-0">
+            <h2 className="text-xl sm:text-2xl text-pink-600 font-semibold mb-3">{sectionTitle}</h2>
             <div className="overflow-x-auto">
-              <table className="min-w-full border rounded">
+              <table className="w-full min-w-[600px] border rounded">
                 <thead>
                   <tr className="bg-gray-800">
-                    <th className="border px-4 py-2 text-pink-600 text-left">Phrase</th>
-                    <th className="border px-4 py-2 text-pink-600">Translation (English)</th>
-                    <th className="border px-4 py-2 text-pink-600">Pronunciation</th>
+                    <th className="border px-3 sm:px-4 py-2 text-pink-600 text-left text-sm sm:text-base">
+                      Phrase
+                    </th>
+                    <th className="border px-3 sm:px-4 py-2 text-pink-600 text-center text-sm sm:text-base">
+                      Translation (English)
+                    </th>
+                    <th className="border px-3 sm:px-4 py-2 text-pink-600 text-center text-sm sm:text-base">
+                      Pronunciation
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {items.map((item, idx) => (
                     <tr key={idx} className="bg-gray-700">
-                      <td className="border px-4 py-2 text-white flex items-center gap-2">
+                      <td className="border px-3 sm:px-4 py-2 text-white flex items-center gap-2 text-sm sm:text-base">
                         <button
                           onClick={() => speak(item[formData.language.toLowerCase()] || "—")}
                           title="Listen"
@@ -93,8 +107,12 @@ const Cheatsheet = () => {
                         </button>
                         {item[formData.language.toLowerCase()] || "—"}
                       </td>
-                      <td className="border px-4 py-2 text-white text-center">{item.english}</td>
-                      <td className="border px-4 py-2 text-white text-center">{item.pronunciation}</td>
+                      <td className="border px-3 sm:px-4 py-2 text-white text-center text-sm sm:text-base">
+                        {item.english}
+                      </td>
+                      <td className="border px-3 sm:px-4 py-2 text-white text-center text-sm sm:text-base">
+                        {item.pronunciation}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -102,8 +120,6 @@ const Cheatsheet = () => {
             </div>
           </div>
         ))}
-
-        
       </div>
     </div>
   );
