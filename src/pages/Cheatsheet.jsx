@@ -37,7 +37,7 @@ const Cheatsheet = () => {
 };
 
 
-  // 📄 Download as PDF
+  //  Download as PDF
   const downloadPDF = () => {
     const element = document.getElementById("cheat-sheet-content");
     const opt = {
